@@ -1,0 +1,40 @@
+{
+  "$schema": "https://schemas.linxin666.org/dsh-skin/v2.json",
+  "skinManifestVersion": 2,
+  "id": "galgame-sakura",
+  "name": "樱花物语 · Galgame",
+  "nameEn": "Sakura Galgame",
+  "author": "dsh-agent",
+  "tagline": "樱粉 × 奶油白视觉小说 · 樱花飘落 · 粉色对话质感",
+  "description": "以经典视觉小说（galgame）为灵感的主题皮肤：樱花粉与奶油白贯穿全局，粉色圆角发送框与柔和渐变按钮，樱花飘落营造标题画面氛围。浅色模式是樱粉奶油白，深色模式自动切换为月夜樱紫。",
+  "tags": ["galgame", "sakura", "visual-novel", "pink", "anime"],
+  "accent": "#e0859f",
+  "order": 200,
+  "version": "1.0.0",
+  "license": "MIT",
+  "requires": {
+    "contracts": [
+      {
+        "apiVersion": "x-org.linxin666.skin-center/v1alpha1",
+        "kind": "SkinHooks",
+        "optional": true
+      }
+    ]
+  },
+  "contributes": {
+    "stylesheet": "skin.css",
+    "patches": "patches.css",
+    "backgroundMedia": {
+      "light": {
+        "type": "image",
+        "src": "assets/sakura-bg.jpg",
+        "scrim": "linear-gradient(rgba(255, 247, 249, 0.18) 0%, rgba(255, 238, 243, 0.14) 55%, rgba(255, 240, 245, 0.22) 100%)"
+      },
+      "dark": {
+        "type": "image",
+        "src": "assets/sakura-bg.jpg",
+        "scrim": "linear-gradient(rgba(37, 28, 34, 0.24) 0%, rgba(47, 36, 44, 0.2) 55%, rgba(37, 28, 34, 0.3) 100%)"
+      }
+    }
+  }
+}

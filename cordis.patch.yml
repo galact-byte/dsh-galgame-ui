@@ -1,0 +1,4 @@
+# Local dsh-galgame-ui bundle patch.
+- insert:
+    - id: galgame-ui
+      name: '@local/dsh-galgame-ui'

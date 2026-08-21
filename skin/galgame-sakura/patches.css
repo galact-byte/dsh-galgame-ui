@@ -1,0 +1,161 @@
+/* Galgame Sakura skin — L3 patches (free selectors, high sensitivity).
+   Scoped under html[data-dsh-skin="galgame-sakura"] by the skin-center loader. */
+
+/* ===== 滚动条：粉色圆角胶囊 ===== */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #f5c0d0;
+  border-radius: 8px;
+  border: 2px solid transparent;
+  background-clip: content-box;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #e8a0b5;
+  border-radius: 8px;
+  border: 2px solid transparent;
+  background-clip: content-box;
+}
+body[data-ds-dark-theme] ::-webkit-scrollbar-thumb {
+  background: #6d4a5a;
+  border-radius: 8px;
+  border: 2px solid transparent;
+  background-clip: content-box;
+}
+
+/* ===== 发送框卡片：视觉小说对话框 ===== */
+[data-composer-card] {
+  border-radius: 22px !important;
+  border: 1px solid rgba(224, 133, 159, 0.32) !important;
+  box-shadow:
+    0 6px 22px rgba(224, 133, 159, 0.12),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.55) !important;
+  transition: box-shadow 0.2s ease, border-color 0.2s ease !important;
+}
+[data-composer-card]:focus-within {
+  border-color: rgba(224, 133, 159, 0.55) !important;
+  box-shadow:
+    0 6px 26px rgba(224, 133, 159, 0.18),
+    0 0 0 3px rgba(224, 133, 159, 0.09) !important;
+}
+body[data-ds-dark-theme] [data-composer-card] {
+  border-color: rgba(245, 160, 184, 0.28) !important;
+  box-shadow: 0 6px 22px rgba(0, 0, 0, 0.28) !important;
+}
+body[data-ds-dark-theme] [data-composer-card]:focus-within {
+  border-color: rgba(245, 160, 184, 0.55) !important;
+  box-shadow:
+    0 6px 26px rgba(245, 160, 184, 0.14),
+    0 0 0 3px rgba(245, 160, 184, 0.08) !important;
+}
+
+/* ===== 发送/停止按钮（仅匹配 aria-label 为发送/停止的主按钮）=====
+   不动上传/模型选择/上下文等工具行按钮 */
+
+/* 发送/停止主按钮：浅粉渐变 */
+[data-composer-card] button[aria-label*="发送"],
+[data-composer-card] button[aria-label*="停止"],
+[data-composer-card] button[aria-label*="Send"],
+[data-composer-card] button[aria-label*="Stop"] {
+  position: relative;
+  background: linear-gradient(135deg, #f7c6d6, #eba4ba) !important;
+  box-shadow:
+    0 2px 8px rgba(224, 133, 159, 0.22),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.5) !important;
+  transition: transform 0.15s ease, box-shadow 0.15s ease !important;
+}
+/* 隐藏发送/停止按钮默认 SVG 图标，改用伪元素绘制 */
+[data-composer-card] button[aria-label*="发送"] svg,
+[data-composer-card] button[aria-label*="停止"] svg,
+[data-composer-card] button[aria-label*="Send"] svg,
+[data-composer-card] button[aria-label*="Stop"] svg {
+  display: none !important;
+}
+/* 发送态：♥（视觉小说心动感，hover 轻轻跳动） */
+[data-composer-card] button[aria-label*="发送"]::after,
+[data-composer-card] button[aria-label*="Send"]::after {
+  content: "♥";
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  color: #fff;
+  font-size: 17px;
+  line-height: 1;
+  text-shadow: 0 1px 3px rgba(180, 80, 110, 0.45);
+  animation: gal-heart-beat 2.2s ease-in-out infinite;
+}
+@keyframes gal-heart-beat {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.12); }
+}
+/* 运行中停止态：精致白色圆角方块 */
+[data-composer-card] button[aria-label*="停止"]::after,
+[data-composer-card] button[aria-label*="Stop"]::after {
+  content: "";
+  width: 9px;
+  height: 9px;
+  border-radius: 2px;
+  background: #fff;
+  box-shadow: 0 1px 3px rgba(180, 80, 110, 0.45);
+}
+[data-composer-card] button[aria-label*="发送"]:hover:not(:disabled),
+[data-composer-card] button[aria-label*="停止"]:hover:not(:disabled),
+[data-composer-card] button[aria-label*="Send"]:hover:not(:disabled),
+[data-composer-card] button[aria-label*="Stop"]:hover:not(:disabled) {
+  transform: translateY(-2px) scale(1.05);
+  box-shadow:
+    0 3px 12px rgba(224, 133, 159, 0.32),
+    0 0 0 3px rgba(224, 133, 159, 0.12),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.6) !important;
+}
+[data-composer-card] button[aria-label*="发送"]:active:not(:disabled),
+[data-composer-card] button[aria-label*="停止"]:active:not(:disabled),
+[data-composer-card] button[aria-label*="Send"]:active:not(:disabled),
+[data-composer-card] button[aria-label*="Stop"]:active:not(:disabled) {
+  transform: translateY(0) scale(0.97);
+}
+[data-composer-card] button[aria-label*="发送"]:disabled,
+[data-composer-card] button[aria-label*="停止"]:disabled,
+[data-composer-card] button[aria-label*="Send"]:disabled,
+[data-composer-card] button[aria-label*="Stop"]:disabled {
+  opacity: 0.45;
+  filter: saturate(0.6);
+}
+body[data-ds-dark-theme] [data-composer-card] button[aria-label*="发送"],
+body[data-ds-dark-theme] [data-composer-card] button[aria-label*="停止"],
+body[data-ds-dark-theme] [data-composer-card] button[aria-label*="Send"],
+body[data-ds-dark-theme] [data-composer-card] button[aria-label*="Stop"] {
+  background: linear-gradient(135deg, #f0a9bf, #d98aa4) !important;
+  box-shadow: 0 2px 8px rgba(245, 160, 184, 0.18) !important;
+}
+body[data-ds-dark-theme] [data-composer-card] button[aria-label*="发送"]:hover:not(:disabled),
+body[data-ds-dark-theme] [data-composer-card] button[aria-label*="停止"]:hover:not(:disabled),
+body[data-ds-dark-theme] [data-composer-card] button[aria-label*="Send"]:hover:not(:disabled),
+body[data-ds-dark-theme] [data-composer-card] button[aria-label*="Stop"]:hover:not(:disabled) {
+  box-shadow:
+    0 3px 12px rgba(245, 160, 184, 0.28),
+    0 0 0 3px rgba(245, 160, 184, 0.11) !important;
+}
+
+/* ===== 发送框输入区：融入卡片 ===== */
+[data-composer-card] textarea {
+  border: none !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
+}
+[data-composer-card] textarea::placeholder {
+  color: rgba(143, 111, 122, 0.55) !important;
+  font-style: italic;
+}
+
+/* ===== 全局按钮圆润化（保持 galgame 手感） ===== */
+button:not([data-composer-card] button) {
+  border-radius: 10px !important;
+}

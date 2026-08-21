@@ -1,0 +1,135 @@
+/* Galgame Sakura skin — L1 token remaps + L2 semantic styles.
+   Scoped under html[data-dsh-skin="galgame-sakura"] by the skin-center loader.
+   Structure mirrors summer-liquid-glass: translucent glass panels driven by
+   the skin-center --dsh-skin-scrim variable, backdrop painted by
+   contributes.backgroundMedia. */
+
+/* ===== 浅色模式：樱粉 × 奶油白 ===== */
+:root {
+  color: #4a323c;
+  background-color: #fff7f9;
+
+  /* ── Glass tiers ───────────────────────────────────────────────────────── */
+  --dsw-glass-normal: rgba(255, 247, 249, 0.5);
+  --dsw-glass-high: rgba(255, 253, 254, 0.78);
+  --dsw-glass-float: rgba(255, 249, 251, 0.72);
+
+  --dsw-font-family: "Yu Gothic UI", "PingFang SC", "Microsoft YaHei", "Hiragino Sans GB", "Helvetica Neue", "Segoe UI", sans-serif;
+
+  /* ── Alias palette ─────────────────────────────────────────────────────── */
+  --dsw-alias-bg-base: var(--dsw-glass-normal);
+  --dsw-alias-bg-layer-1: rgba(255, 253, 254, calc(.45 + var(--dsh-skin-scrim, 0) * .28));
+  --dsw-alias-bg-layer-2: rgba(255, 238, 243, calc(.48 + var(--dsh-skin-scrim, 0) * .28));
+  --dsw-alias-bg-layer-3: rgba(255, 228, 236, calc(.48 + var(--dsh-skin-scrim, 0) * .28));
+  --dsw-alias-bg-overlay: rgba(255, 249, 251, calc(.8 + var(--dsh-skin-scrim, 0) * .15));
+  --dsw-alias-border-l1: #f5d5de;
+  --dsw-alias-border-l2: #eab3c1;
+  --dsw-alias-border-l3: #e39aac;
+  --dsw-alias-border-l4: #d9869a;
+  --dsw-alias-brand-primary: #e0859f;
+  --dsw-alias-brand-primary-invert: #fff;
+  --dsw-alias-label-primary: #4a323c;
+  --dsw-alias-label-secondary: #8f6f7a;
+  --dsw-alias-label-tertiary: #a58690;
+  --dsw-alias-label-dimmed: #b89aa4;
+  --dsw-alias-state-error-primary: #e5484d;
+  --dsw-alias-state-success-primary: #4fae7e;
+  --dsw-alias-state-warn-primary: #e8a13d;
+  --dsw-alias-button-primary-fill: #e0859f;
+  --dsw-alias-button-primary-hover: #d97994;
+  --dsw-alias-button-info-fill: #e0859f;
+  --dsw-alias-button-info-hover: #d97994;
+  --dsw-alias-button-tool-bar-fill: #e0859f;
+  --dsw-alias-button-tool-bar-hover: #d97994;
+  --dsw-alias-interactive-bg-hover: #fde8ee;
+  --dsw-alias-interactive-bg-active: #fadde6;
+  --dsw-alias-scrollbar-bg-l1: #f5c0d0;
+  --dsw-alias-scrollbar-bg-l2: #f5c0d0;
+  --dsw-alias-scrollbar-hover-l1: #e8a0b5;
+  --dsw-alias-scrollbar-hover-l2: #e8a0b5;
+  --dsw-alias-toast-bg: #fff3f6;
+  --dsw-alias-tooltip-bg: #4a323c;
+  --dsw-specific-bubble: #fff0f4;
+  --dsw-specific-bubble-highlight: #ffe4ec;
+  --dsw-specific-input-major: rgba(255, 253, 254, calc(.5 + var(--dsh-skin-scrim, 0) * .3));
+  --dsw-specific-login-input: rgba(255, 253, 254, calc(.5 + var(--dsh-skin-scrim, 0) * .3));
+  --dsw-specific-menu: var(--dsw-glass-float);
+  --dsw-specific-sidebar-fill: rgba(255, 228, 236, 0.4);
+  --dsw-specific-sidebar-nav-item-active: #f7d7e0;
+  --dsw-specific-sidebar-nav-item-hover: #fde8ee;
+
+  /* ── Shared finish tokens ───────────────────────────────────────────────── */
+  --dsw-shadow-lv1: 0 2px 8px rgba(224, 133, 159, 0.12);
+  --dsw-shadow-lv2: 0 4px 14px rgba(224, 133, 159, 0.16);
+  --dsw-shadow-lv3: 0 10px 30px rgba(224, 133, 159, 0.18);
+  --dsw-mask-blur: blur(24px) saturate(140%);
+}
+
+/* ===== 深色模式：月夜樱 ===== */
+body[data-ds-dark-theme] {
+  color: #f7e9ef;
+  background-color: #251c22;
+
+  /* ── Glass tiers (dark) ────────────────────────────────────────────────── */
+  --dsw-glass-normal: rgba(37, 28, 34, 0.5);
+  --dsw-glass-high: rgba(47, 36, 44, 0.8);
+  --dsw-glass-float: rgba(50, 39, 49, 0.74);
+
+  --dsw-alias-bg-base: var(--dsw-glass-normal);
+  --dsw-alias-bg-layer-1: rgba(47, 36, 44, calc(.45 + var(--dsh-skin-scrim, 0) * .3));
+  --dsw-alias-bg-layer-2: rgba(58, 44, 53, calc(.48 + var(--dsh-skin-scrim, 0) * .3));
+  --dsw-alias-bg-layer-3: rgba(69, 50, 61, calc(.48 + var(--dsh-skin-scrim, 0) * .3));
+  --dsw-alias-bg-overlay: rgba(50, 39, 49, calc(.82 + var(--dsh-skin-scrim, 0) * .14));
+  --dsw-alias-border-l1: #4c3943;
+  --dsw-alias-border-l2: #61495a;
+  --dsw-alias-border-l3: #7a5b6e;
+  --dsw-alias-border-l4: #936e83;
+  --dsw-alias-brand-primary: #f5a0b8;
+  --dsw-alias-brand-primary-invert: #251c22;
+  --dsw-alias-label-primary: #f7e9ef;
+  --dsw-alias-label-secondary: #c9acb8;
+  --dsw-alias-label-tertiary: #ad8fa0;
+  --dsw-alias-label-dimmed: #967a89;
+  --dsw-alias-state-error-primary: #ff6b81;
+  --dsw-alias-state-success-primary: #57d99b;
+  --dsw-alias-state-warn-primary: #ffc46b;
+  --dsw-alias-button-primary-fill: #f5a0b8;
+  --dsw-alias-button-primary-hover: #e08ca6;
+  --dsw-alias-button-info-fill: #f5a0b8;
+  --dsw-alias-button-info-hover: #e08ca6;
+  --dsw-alias-button-tool-bar-fill: #f5a0b8;
+  --dsw-alias-button-tool-bar-hover: #e08ca6;
+  --dsw-alias-interactive-bg-hover: #43303a;
+  --dsw-alias-interactive-bg-active: #523a46;
+  --dsw-alias-scrollbar-bg-l1: #6d4a5a;
+  --dsw-alias-scrollbar-bg-l2: #6d4a5a;
+  --dsw-alias-scrollbar-hover-l1: #8a6072;
+  --dsw-alias-scrollbar-hover-l2: #8a6072;
+  --dsw-alias-toast-bg: #3a2c35;
+  --dsw-alias-tooltip-bg: #f7e9ef;
+  --dsw-specific-bubble: #3a2c35;
+  --dsw-specific-bubble-highlight: #45323d;
+  --dsw-specific-input-major: rgba(50, 38, 46, calc(.5 + var(--dsh-skin-scrim, 0) * .3));
+  --dsw-specific-login-input: rgba(50, 38, 46, calc(.5 + var(--dsh-skin-scrim, 0) * .3));
+  --dsw-specific-menu: var(--dsw-glass-float);
+  --dsw-specific-sidebar-fill: rgba(43, 32, 39, 0.42);
+  --dsw-specific-sidebar-nav-item-active: #523a46;
+  --dsw-specific-sidebar-nav-item-hover: #43303a;
+
+  --dsw-shadow-lv1: 0 2px 8px rgba(0, 0, 0, 0.25);
+  --dsw-shadow-lv2: 0 4px 14px rgba(0, 0, 0, 0.3);
+  --dsw-shadow-lv3: 0 10px 30px rgba(0, 0, 0, 0.35);
+  --dsw-mask-blur: blur(24px) saturate(120%);
+}
+
+/* ===== 全局氛围 ===== */
+::selection {
+  background: rgba(224, 133, 159, 0.28);
+}
+
+html[data-dsh-skin="galgame-sakura"] {
+  color-scheme: light;
+}
+body[data-ds-dark-theme] {
+  color-scheme: dark;
+}

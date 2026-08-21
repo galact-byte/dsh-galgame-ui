@@ -1,0 +1,40 @@
+{
+  "name": "@local/dsh-galgame-ui",
+  "description": "Galgame Sakura UI enhancer for the dsh web GUI: sakura petal drift, sidebar brand title, turn-tail pager, and the skin settings panel. Companion to the 'galgame-sakura' skin-center skin (colors/backdrop are owned by the skin; this package owns only React UI enhancements).",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "main": "lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./client": "./lib/client.js",
+    "./package.json": "./package.json"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "inject": [
+        "@deepseek-ai/dsh-client-runtime",
+        "@deepseek-ai/dsh-client-ui-conversation",
+        "@deepseek-ai/dsh-client-ui-settings"
+      ],
+      "platform": "web"
+    }
+  },
+  "files": [
+    "lib",
+    "skin",
+    "scripts",
+    "docs",
+    "cordis.patch.yml",
+    "README.md",
+    "CHANGES.md"
+  ],
+  "license": "MIT",
+  "peerDependencies": {
+    "@deepseek-ai/cordis": "^4.0.1",
+    "react": "^18.2.0"
+  }
+}
