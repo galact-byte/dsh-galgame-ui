@@ -11,7 +11,7 @@
   "accent": "#e0859f",
   "order": 200,
   "version": "1.0.0",
-  "license": "MIT",
+  "license": "LicenseRef-Galact-Internal-Use-1.0",
   "requires": {
     "contracts": [
       {

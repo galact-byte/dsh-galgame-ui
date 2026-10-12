@@ -30,9 +30,11 @@
     "docs",
     "cordis.patch.yml",
     "README.md",
-    "CHANGES.md"
+    "CHANGES.md",
+    "LICENSE",
+    "NOTICE"
   ],
-  "license": "MIT",
+  "license": "SEE LICENSE IN LICENSE",
   "peerDependencies": {
     "@deepseek-ai/cordis": "^4.0.1",
     "react": "^18.2.0"

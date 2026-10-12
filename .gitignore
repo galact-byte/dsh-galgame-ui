@@ -4,3 +4,9 @@ pnpm-lock.yaml
 .DS_Store
 Thumbs.db
 .vscode/
+
+# 本地 AI 配置
+CLAUDE.md
+GEMINI.md
+AGENTS.md
+.omc/
